@@ -15,3 +15,4 @@ RUN pip install --no-cache-dir scikit-learn
 
 # Comando para ejecutar el script de Python (ajustar según sea necesario)
 CMD ["python", "run_model.py"]
+## cambios
