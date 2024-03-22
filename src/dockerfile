@@ -1,2 +1,3 @@
 FROM python 
-run 
+run /
+RUN run
