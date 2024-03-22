@@ -1,3 +1,17 @@
-FROM python 
-run /
-RUN run
+# Usar una imagen base oficial de Python
+FROM python:3.8-slim
+
+# Establecer el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copiar el archivo del modelo Random Forest al directorio de trabajo
+COPY model.joblib /app/model.joblib
+
+# Opcionalmente, copiar un script de Python que carga y utiliza el modelo
+COPY run_model.py /app/run_model.py
+
+# Instalar las dependencias necesarias, incluido scikit-learn
+RUN pip install --no-cache-dir scikit-learn
+
+# Comando para ejecutar el script de Python (ajustar según sea necesario)
+CMD ["python", "run_model.py"]
